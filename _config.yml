@@ -6,8 +6,8 @@ gems:                 [jekyll-paginate]
 # Setup
 title:               片虚
 tagline:             'Like a void leaf'
-description:         '片虚的博客'
-url:                 http://lanyon.getpoole.com
+description:         'Like a void leaf'
+url:                 http://viodleaf.github.io
 baseurl:             ''
 paginate:            5
 
