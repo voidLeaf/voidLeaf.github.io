@@ -16,7 +16,7 @@ ECMAScript 定义
 - 隐式定义的变量
 
 node.js不可能定义外层变量，一般都是全局对象的属性
-
+<!--more-->
 ## process 
 global对象的属性，用于描述Node.js进程状态的对象  
 成员方法：

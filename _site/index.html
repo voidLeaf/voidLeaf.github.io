@@ -40,7 +40,7 @@
         <span class="icon-bar"></span>
       </button>
       <!-- 导航条LOGO -->
-      <a class="navbar-brand" href="#">DriftingDog</a>
+      <a class="navbar-brand" href="{site.baseurl}">DriftingDog</a>
     </div>
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
         <ul id="nav"  class="nav navbar-nav">
@@ -109,13 +109,9 @@ start-slaves.sh
 <p>停止集群</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>stop-master.sh
-stop-slaves.sh
-</code></pre>
-</div>
+stop-slaves.sh &lt;!--more--&gt; 进入pyspark 
 
-<p>进入pyspark</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>pyspark
+pyspark
 </code></pre>
 </div>
 
@@ -247,74 +243,7 @@ w: spark.util.Vector = (0.7290865701603526, 0.8009687428076777,
   <li>隐式定义的变量</li>
 </ul>
 
-<p>node.js不可能定义外层变量，一般都是全局对象的属性</p>
-
-<h2 id="process">process</h2>
-<p>global对象的属性，用于描述Node.js进程状态的对象<br />
-成员方法：
-- process.argv
-	命令行参数数组，第一个元素是node，第二个元素是脚本文件名，第三个元素开始是运行参数
-- process.stdout
-	标准输出流 
-- process.stdin 
-	标准输入流
-	为事件循环设置一项任务，- process.nextTick(callback)
-node.js会在下次事件循环调响应时调用callback</p>
-
-<h2 id="console">console</h2>
-<p>提供控制台标准输出
-- console.log
-- console.error
-- console.trace</p>
-
-<h2 id="util">util</h2>
-<p>### util.inherite
-实现对象间原型继承</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>util.inherits(Sub,Base); ### util.inspect  将任意对象转换成字符串 
-</code></pre>
-</div>
-
-<h2 id="events">events</h2>
-<p>事件发射器</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>EventEmitter.on(event,lisener)
-//注册时间监听器
-EventEmitter.emit(event,[],[])
-//发射event事件，传入若干参数
-EventEmitter.once(event,listener)
-//为指定事件注册一个单次监听器
-</code></pre>
-</div>
-
-<p>error事件 ：遇到异常时发射error事件，没有响应的事件即为异常</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var events = require('events');
-var emitter = new events.EventEmitter();
-emitter.emit('error');
-</code></pre>
-</div>
-
-<h2 id="fs">文件系统fs</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>fs.readFile(filename,[encoding],[callback])
-var fs=require('fs');
-fs.readFile('content.txt',function(err,data){
-	if(err){
-		console.log("error");
-	}else{
-		console.log("data");
-	}
-});
-</code></pre>
-</div>
-
-<p>console.log(“error”);
-    	}else{
-    		console.log(“data”);
-    	}
-    });</p>
-
+<p>node.js不可能定义外层变量，一般都是全局对象的属性
  ...
           </div>
           <div class="post-footer">
@@ -341,11 +270,7 @@ fs.readFile('content.txt',function(err,data){
             Sep 4, 2015
           </div>
           <div class="post-content">
-            <p>人有时候会折叠自己，以便处在不同的空间时，转换不同的面具。</p>
-
-<p>比如回到家的时候跟在学校的时候，人所感知的节奏截然不同，所以要迫不及待地转换角色来适应变化。而这时候处在另一面的细节就会迅速变得陌生起来。但当有远方的消息传来，丢失的那一面却被迅速唤醒，你惊奇地发现自己突然掌握了对那些遗忘细节的感知能力，也会偶尔有一刹那忘记了究竟身在何方。</p>
-
- ...
+            <p>人有时候会折叠自己，以便处在不同的空间时，转换不同的面具。  ...
           </div>
           <div class="post-footer">
             

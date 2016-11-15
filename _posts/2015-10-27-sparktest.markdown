@@ -15,7 +15,7 @@ categories: 代码之术
     
     stop-master.sh
     stop-slaves.sh
-
+<!--more-->
 进入pyspark 
 
     pyspark
