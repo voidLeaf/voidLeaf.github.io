@@ -89,6 +89,12 @@ h1, h2, h3, h4, h5, h6 {
 }
 h1 {
   font-size: 2rem;
+<<<<<<< HEAD
+=======
+  border-bottom: 1px solid #eee;
+  margin-bottom: 1rem;
+  padding-bottom: .5rem;
+>>>>>>> parent of 57fb4d8... copy of my blog
 }
 h2 {
   margin-top: 1rem;
