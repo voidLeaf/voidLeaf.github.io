@@ -49,8 +49,8 @@ body {
 
 html {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 14px;
-  line-height: 1.5;
+  font-size: 15px;
+  line-height: 1.8;
 }
 @media (min-width: 38em) {
   html {
@@ -106,6 +106,7 @@ h4, h5, h6 {
 /* Body text */
 p {
   margin-top: 0;
+  color:#555;
   margin-bottom: 1rem;
 }
 
