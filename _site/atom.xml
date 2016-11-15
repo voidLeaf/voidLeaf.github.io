@@ -4,7 +4,7 @@
  <title>片虚</title>
  <link href="http://lanyon.getpoole.com/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.com/"/>
- <updated>2016-11-15T14:41:04+08:00</updated>
+ <updated>2016-11-15T14:49:28+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>Mark Otto</name>
@@ -179,12 +179,21 @@
 &lt;p&gt;启动集群&lt;/p&gt;
 
 &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;start-master.sh
-start-slaves.sh &amp;lt;!--more--&amp;gt; 停止集群
+start-slaves.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
 
-stop-master.sh
-stop-slaves.sh &amp;lt;!--more--&amp;gt; 进入pyspark 
+&lt;!--more--&gt;
+&lt;p&gt;停止集群&lt;/p&gt;
 
-pyspark
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;stop-master.sh
+stop-slaves.sh
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;进入pyspark&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pyspark
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 

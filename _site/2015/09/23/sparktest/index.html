@@ -92,138 +92,7 @@
       </div>
 
       <div class="container content">
-          <header class="post-header">
-    <h1 class="post-title"> spark基本命令 </h1>
-    <p class="post-meta">Sep 23, 2015</p>
-  </header>
-
-  <article class="post-content">
-    <p>##基本命令</p>
-
-<p>启动集群</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>start-master.sh
-start-slaves.sh &lt;!--more--&gt; 停止集群
-
-stop-master.sh
-stop-slaves.sh &lt;!--more--&gt; 进入pyspark 
-
-pyspark
-</code></pre>
-</div>
-
-<p>进入spark-shell</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>spark-shell 
-</code></pre>
-</div>
-
-<p>退出sparkshell ：ctrl+z</p>
-
-<p>##spark-shell入门使用</p>
-
-<p>下载测试文件到本地</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>wget http://www-stat.stanford.edu/~tibs/ElemStatLearn/datasets/spam.data  
-</code></pre>
-</div>
-
-<p>加载文件到spark</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; val inFile = sc.textFile("./spam.data")
-</code></pre>
-</div>
-
-<p>保证所有的客户机都能访问到该文件</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; import org.apache.spark.SparkFiles;
-scala&gt; val file = sc.addFile("spam.data")
-scala&gt; val inFile = sc.textFile(SparkFiles.get("spam.data"))
-</code></pre>
-</div>
-
-<p>使用map功能将文本转化成数字数组</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; val nums = inFile.map(x =&gt; x.split(' ').map(_.toDouble)) 
-</code></pre>
-</div>
-
-<p>打印部分结果</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; inFile.first()
-[...]
-res2: String = 0 0.64 0.64 0 0.32 0 0 0 0 0 0 0.64 0 0 0 0.32 0 1.29
-1.93 0 0.96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0.778 0 0 3.756 61 278 1 
-
-scala&gt; nums.first()
-[...]
-res3: Array[Double] = Array(0.0, 0.64, 0.64, 0.0, 0.32, 0.0, 0.0, 0.0,
-0.0, 0.0, 0.0, 0.64, 0.0, 0.0, 0.0, 0.32, 0.0, 1.29, 1.93, 0.0, 0.96,
-0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-0.0, 0.0, 0.778, 0.0, 0.0, 3.756, 61.0, 278.0, 1.0)
-</code></pre>
-</div>
-
-<p>##使用spark进行logist回归</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; import org.apache.spark.util.Vector
-import spark.util.Vector
-scala&gt; case class DataPoint(x: Vector, y: Double)
-defined class DataPoint
-scala&gt; def parsePoint(x: Array[Double]): DataPoint = {
-DataPoint(new Vector(x.slice(0,x.size-2)) , x(x.size-1))
-}
-parsePoint: (x: Array[Double])this.DataPoint
-scala&gt; val points = nums.map(parsePoint(_))
-points: spark.RDD[this.DataPoint] = MappedRDD[3] at map at
-&lt;console&gt;:24
-scala&gt; import java.util.Random
-import java.util.Random
-scala&gt; val rand = new Random(53)
-rand: java.util.Random = java.util.Random@3f4c24
-scala&gt; var w = Vector(nums.first.size-2, _ =&gt; rand.nextDouble)
-13/03/31 00:57:30 INFO spark.SparkContext: Starting job: first at
-&lt;console&gt;:20
-...
-13/03/31 00:57:30 INFO spark.SparkContext: Job finished: first at
-&lt;console&gt;:20, took 0.01272858 s
-w: spark.util.Vector = (0.7290865701603526, 0.8009687428076777,
-0.6136632797111822, 0.9783178194773176, 0.3719683631485643,
-0.46409291255379836, 0.5340172959927323, 0.04034252433669905,
-0.3074428389716637, 0.8537414030626244, 0.8415816118493813,
-0.719935849109521, 0.2431646830671812, 0.17139348575456848,
-0.5005137792223062, 0.8915164469396641, 0.7679331873447098,
-0.7887571495335223, 0.7263187438977023, 0.40877063468941244,
-0.7794519914671199, 0.1651264689613885, 0.1807006937030201,
-</code></pre>
-</div>
-
-
-  </article>
-  <!-- 多说评论框 start -->
-  
-	<div class="ds-thread" data-thread-key="/2015/09/23/sparktest" data-title="spark基本命令" data-url="/2015/09/23/sparktest/"></div>
-
-<!-- 多说评论框 end -->
-<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-<br>
-<br>
-<script type="text/javascript">
-var duoshuoQuery = {short_name:"driftingdog"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-<!-- 多说公共JS代码 end -->
-=======
-<div class="post">
+        <div class="post">
   <h1 class="post-title">spark基本命令</h1>
   <span class="post-date">23 Sep 2015</span>
   <p>##基本命令</p>
@@ -231,12 +100,21 @@ var duoshuoQuery = {short_name:"driftingdog"};
 <p>启动集群</p>
 
 <div class="highlighter-rouge"><pre class="highlight"><code>start-master.sh
-start-slaves.sh &lt;!--more--&gt; 停止集群
+start-slaves.sh
+</code></pre>
+</div>
 
-stop-master.sh
-stop-slaves.sh &lt;!--more--&gt; 进入pyspark 
+<!--more-->
+<p>停止集群</p>
 
-pyspark
+<div class="highlighter-rouge"><pre class="highlight"><code>stop-master.sh
+stop-slaves.sh
+</code></pre>
+</div>
+
+<p>进入pyspark</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>pyspark
 </code></pre>
 </div>
 
@@ -330,7 +208,6 @@ w: spark.util.Vector = (0.7290865701603526, 0.8009687428076777,
 
 
 </div>
->>>>>>> parent of 57fb4d8... copy of my blog
 
 <div class="related">
   <h2>Related Posts</h2>

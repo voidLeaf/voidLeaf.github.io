@@ -10,12 +10,13 @@ date:   2015-09-22 23:54:31
 
     start-master.sh
     start-slaves.sh
+
 <!--more-->
 停止集群
     
     stop-master.sh
     stop-slaves.sh
-<!--more-->
+
 进入pyspark 
 
     pyspark
