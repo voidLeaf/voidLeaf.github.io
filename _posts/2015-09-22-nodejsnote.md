@@ -2,7 +2,6 @@
 layout: post
 title:  "node.js 笔记（全局变量）"
 date:   2015-09-22 23:54:31
-categories: 代码之术
 ---
 
 ## 全局对象  
@@ -10,7 +9,7 @@ categories: 代码之术
 
 ## 全局变量  
 ECMAScript 定义  
-
+<!--more-->
 - 最外层定义的变量
 - 全局对象的属性
 - 隐式定义的变量

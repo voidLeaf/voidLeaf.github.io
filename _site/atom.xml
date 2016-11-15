@@ -4,11 +4,7 @@
  <title>片虚</title>
  <link href="http://lanyon.getpoole.com/atom.xml" rel="self"/>
  <link href="http://lanyon.getpoole.com/"/>
-<<<<<<< HEAD
- <updated>2016-11-15T09:59:50+08:00</updated>
-=======
- <updated>2016-11-15T10:04:39+08:00</updated>
->>>>>>> parent of 57fb4d8... copy of my blog
+ <updated>2016-11-15T14:41:04+08:00</updated>
  <id>http://lanyon.getpoole.com</id>
  <author>
    <name>Mark Otto</name>
@@ -23,7 +19,7 @@
    <id>http://lanyon.getpoole.com/2016/11/15/introduction-for-redux</id>
    <content type="html">&lt;h2 id=&quot;react-&quot;&gt;从 React 说起&lt;/h2&gt;
 
-&lt;p&gt;刚开始接触 react 的时候其实是感到非常惊艳的，在 React 的架构下可以像搭积木一样把前端的视图组件组合在一起，非常好玩，React 这种模块化的结构保证了组件内部的高度自治性，使得前端开发高度正交化。以至于刚刚使用 React 的时候简直觉得是在上帝之手的帮助之下写前端，触手丝滑，效率飞起，但是用了一段时间之后就很快发现了一些问题，比如父组件可以通过给子组件赋值 props，但是子组件向父组件传值却只能通过较为复杂的双向绑定，如果要向不是父子关系的组件传值怎么办呢？React 的文档会告诉你只能再 copy 一个组件过来了。EXM？组件之间传值这么常见的操作 React 却只能给出一个这么简单粗暴的办法？负分！差评！&lt;/p&gt;
+&lt;p&gt;刚开始接触 react 的时候其实是感到非常惊艳的，在 React 的架构下可以像搭积木一样把前端的视图组件组合在一起，非常好玩&lt;!--more--&gt;，React 这种模块化的结构保证了组件内部的高度自治性，使得前端开发高度正交化。以至于刚刚使用 React 的时候简直觉得是在上帝之手的帮助之下写前端，触手丝滑，效率飞起，但是用了一段时间之后就很快发现了一些问题，比如父组件可以通过给子组件赋值 props，但是子组件向父组件传值却只能通过较为复杂的双向绑定，如果要向不是父子关系的组件传值怎么办呢？React 的文档会告诉你只能再 copy 一个组件过来了。EXM？组件之间传值这么常见的操作 React 却只能给出一个这么简单粗暴的办法？负分！差评！&lt;/p&gt;
 
 &lt;p&gt;但是知道了 Redux 这么一个神奇的存在之后，感觉 React 终于有救了，在 Redux 的框架之下，所有的状态被集中起来统一管理，使得应用内的数据完美地同步起来，爸爸再也不用担心收不到儿子的消息啦&lt;/p&gt;
 
@@ -49,7 +45,7 @@
 
 &lt;p&gt;action 是把数据从应用传到 store 的有效载荷。它是 store 数据的&lt;strong&gt;唯一&lt;/strong&gt;来源。用来表明一个事件的发生，但并不对状态如何修改做任何描述。一个action 的结构是一个 javascript 普通对象，一个 action 的结构如下&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;//type字段用于标识action的类型，一般用一个字符串来表示&lt;/span&gt;
   &lt;span class=&quot;nl&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ADD_TODO'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
   &lt;span class=&quot;c1&quot;&gt;//text是用户自定义的字段，一般用来传递和状态修改相关的参数&lt;/span&gt;
@@ -69,7 +65,7 @@
   &lt;li&gt;
     &lt;p&gt;为了确保每次对状态修改的结果都是一致的，reducer 必须是一个&lt;strong&gt;纯函数&lt;/strong&gt;，也就是说，只要是同样的输入，必定得到同样的输出。纯函数需要遵循以下约束：&lt;/p&gt;
 
-    &lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;不得改写参数&lt;/span&gt;
+    &lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;err&quot;&gt;不得改写参数&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;不能调用系统&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;I&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;O&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;的&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;API&lt;/span&gt;
 &lt;span class=&quot;err&quot;&gt;不能调用&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Date&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;now&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;或者&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;Math&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;等不纯的方法，因为每次会得到不一样的结果&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -79,7 +75,7 @@
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* 在这个 reducer 中，对于一个类型为 ADD_TODO 的 action，返回的新状态是在传入状态数组中追加了一个元素 */&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;cm&quot;&gt;/* 在这个 reducer 中，对于一个类型为 ADD_TODO 的 action，返回的新状态是在传入状态数组中追加了一个元素 */&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;function&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;todos&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;state&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[],&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
   &lt;span class=&quot;k&quot;&gt;switch&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;action&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;case&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ADD_TODO&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;:&lt;/span&gt;
@@ -111,7 +107,7 @@
 
 &lt;p&gt;创建一个 store 其实很简单：&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'redux'&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'redux'&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;reducers&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'./reducers'&lt;/span&gt;
 &lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;reducers&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
@@ -119,13 +115,13 @@
 
 &lt;p&gt;&lt;a href=&quot;http://www.redux.org.cn/docs/api/createStore.html&quot;&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;createStore()&lt;/code&gt;&lt;/a&gt; 的第二个参数是可选的, 用于设置 state 初始状态。这对开发同构应用时非常有用，服务器端 redux 应用的 state 结构可以与客户端保持一致, 那么客户端可以将从网络接收到的服务端 state 直接用于本地数据初始化。&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoApp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;STATE_FROM_SERVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kd&quot;&gt;let&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;store&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;todoApp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;window&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nx&quot;&gt;STATE_FROM_SERVER&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
 
 &lt;p&gt;接下来就可以简单实现一个创建处理 action 的过程了&lt;/p&gt;
 
-&lt;div class=&quot;language-javascript highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'redux'&lt;/span&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kr&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;createStore&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'redux'&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;ADD_TODO&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;'ADD_TODO'&lt;/span&gt;
 &lt;span class=&quot;c1&quot;&gt;//创建一个 action&lt;/span&gt;
 &lt;span class=&quot;kr&quot;&gt;const&lt;/span&gt; &lt;span class=&quot;nx&quot;&gt;simpleAction1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
@@ -170,6 +166,216 @@
 &lt;span class=&quot;nx&quot;&gt;unsubscribe&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;();&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>spark基本命令</title>
+   <link href="http://lanyon.getpoole.com/2015/09/23/sparktest/"/>
+   <updated>2015-09-23T07:54:31+08:00</updated>
+   <id>http://lanyon.getpoole.com/2015/09/23/sparktest</id>
+   <content type="html">&lt;p&gt;##基本命令&lt;/p&gt;
+
+&lt;p&gt;启动集群&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;start-master.sh
+start-slaves.sh &amp;lt;!--more--&amp;gt; 停止集群
+
+stop-master.sh
+stop-slaves.sh &amp;lt;!--more--&amp;gt; 进入pyspark 
+
+pyspark
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;进入spark-shell&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;spark-shell 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;退出sparkshell ：ctrl+z&lt;/p&gt;
+
+&lt;p&gt;##spark-shell入门使用&lt;/p&gt;
+
+&lt;p&gt;下载测试文件到本地&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;wget http://www-stat.stanford.edu/~tibs/ElemStatLearn/datasets/spam.data  
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;加载文件到spark&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scala&amp;gt; val inFile = sc.textFile(&quot;./spam.data&quot;)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;保证所有的客户机都能访问到该文件&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scala&amp;gt; import org.apache.spark.SparkFiles;
+scala&amp;gt; val file = sc.addFile(&quot;spam.data&quot;)
+scala&amp;gt; val inFile = sc.textFile(SparkFiles.get(&quot;spam.data&quot;))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;使用map功能将文本转化成数字数组&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scala&amp;gt; val nums = inFile.map(x =&amp;gt; x.split(' ').map(_.toDouble)) 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;打印部分结果&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scala&amp;gt; inFile.first()
+[...]
+res2: String = 0 0.64 0.64 0 0.32 0 0 0 0 0 0 0.64 0 0 0 0.32 0 1.29
+1.93 0 0.96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0.778 0 0 3.756 61 278 1 
+
+scala&amp;gt; nums.first()
+[...]
+res3: Array[Double] = Array(0.0, 0.64, 0.64, 0.0, 0.32, 0.0, 0.0, 0.0,
+0.0, 0.0, 0.0, 0.64, 0.0, 0.0, 0.0, 0.32, 0.0, 1.29, 1.93, 0.0, 0.96,
+0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
+0.0, 0.0, 0.778, 0.0, 0.0, 3.756, 61.0, 278.0, 1.0)
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;##使用spark进行logist回归&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;scala&amp;gt; import org.apache.spark.util.Vector
+import spark.util.Vector
+scala&amp;gt; case class DataPoint(x: Vector, y: Double)
+defined class DataPoint
+scala&amp;gt; def parsePoint(x: Array[Double]): DataPoint = {
+DataPoint(new Vector(x.slice(0,x.size-2)) , x(x.size-1))
+}
+parsePoint: (x: Array[Double])this.DataPoint
+scala&amp;gt; val points = nums.map(parsePoint(_))
+points: spark.RDD[this.DataPoint] = MappedRDD[3] at map at
+&amp;lt;console&amp;gt;:24
+scala&amp;gt; import java.util.Random
+import java.util.Random
+scala&amp;gt; val rand = new Random(53)
+rand: java.util.Random = java.util.Random@3f4c24
+scala&amp;gt; var w = Vector(nums.first.size-2, _ =&amp;gt; rand.nextDouble)
+13/03/31 00:57:30 INFO spark.SparkContext: Starting job: first at
+&amp;lt;console&amp;gt;:20
+...
+13/03/31 00:57:30 INFO spark.SparkContext: Job finished: first at
+&amp;lt;console&amp;gt;:20, took 0.01272858 s
+w: spark.util.Vector = (0.7290865701603526, 0.8009687428076777,
+0.6136632797111822, 0.9783178194773176, 0.3719683631485643,
+0.46409291255379836, 0.5340172959927323, 0.04034252433669905,
+0.3074428389716637, 0.8537414030626244, 0.8415816118493813,
+0.719935849109521, 0.2431646830671812, 0.17139348575456848,
+0.5005137792223062, 0.8915164469396641, 0.7679331873447098,
+0.7887571495335223, 0.7263187438977023, 0.40877063468941244,
+0.7794519914671199, 0.1651264689613885, 0.1807006937030201,
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>node.js 笔记（全局变量）</title>
+   <link href="http://lanyon.getpoole.com/2015/09/23/nodejsnote/"/>
+   <updated>2015-09-23T07:54:31+08:00</updated>
+   <id>http://lanyon.getpoole.com/2015/09/23/nodejsnote</id>
+   <content type="html">&lt;h2 id=&quot;section&quot;&gt;全局对象&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;global，如console,process
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;section-1&quot;&gt;全局变量&lt;/h2&gt;
+&lt;p&gt;ECMAScript 定义&lt;br /&gt;
+&lt;!--more--&gt;
+- 最外层定义的变量
+- 全局对象的属性
+- 隐式定义的变量&lt;/p&gt;
+
+&lt;p&gt;node.js不可能定义外层变量，一般都是全局对象的属性
+&lt;!--more--&gt;
+## process 
+global对象的属性，用于描述Node.js进程状态的对象&lt;br /&gt;
+成员方法：
+- process.argv
+	命令行参数数组，第一个元素是node，第二个元素是脚本文件名，第三个元素开始是运行参数
+- process.stdout
+	标准输出流 
+- process.stdin 
+	标准输入流
+	为事件循环设置一项任务，- process.nextTick(callback)
+node.js会在下次事件循环调响应时调用callback&lt;/p&gt;
+
+&lt;h2 id=&quot;console&quot;&gt;console&lt;/h2&gt;
+&lt;p&gt;提供控制台标准输出
+- console.log
+- console.error
+- console.trace&lt;/p&gt;
+
+&lt;h2 id=&quot;util&quot;&gt;util&lt;/h2&gt;
+&lt;p&gt;### util.inherite
+实现对象间原型继承&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;util.inherits(Sub,Base); ### util.inspect  将任意对象转换成字符串 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;events&quot;&gt;events&lt;/h2&gt;
+&lt;p&gt;事件发射器&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;EventEmitter.on(event,lisener)
+//注册时间监听器
+EventEmitter.emit(event,[],[])
+//发射event事件，传入若干参数
+EventEmitter.once(event,listener)
+//为指定事件注册一个单次监听器
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;error事件 ：遇到异常时发射error事件，没有响应的事件即为异常&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;var events = require('events');
+var emitter = new events.EventEmitter();
+emitter.emit('error');
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&quot;fs&quot;&gt;文件系统fs&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;fs.readFile(filename,[encoding],[callback])
+var fs=require('fs');
+fs.readFile('content.txt',function(err,data){
+	if(err){
+		console.log(&quot;error&quot;);
+	}else{
+		console.log(&quot;data&quot;);
+	}
+});
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;console.log(“error”);
+    	}else{
+    		console.log(“data”);
+    	}
+    });&lt;/p&gt;
+
+</content>
+ </entry>
+ 
+ <entry>
+   <title>折叠</title>
+   <link href="http://lanyon.getpoole.com/%E6%9C%AA%E5%88%86%E7%B1%BB/2015/09/04/fold/"/>
+   <updated>2015-09-04T21:38:21+08:00</updated>
+   <id>http://lanyon.getpoole.com/%E6%9C%AA%E5%88%86%E7%B1%BB/2015/09/04/fold</id>
+   <content type="html">&lt;p&gt;人有时候会折叠自己，以便处在不同的空间时，转换不同的面具。 &lt;!--more--&gt;&lt;/p&gt;
+
+&lt;p&gt;比如回到家的时候跟在学校的时候，人所感知的节奏截然不同，所以要迫不及待地转换角色来适应变化。而这时候处在另一面的细节就会迅速变得陌生起来。但当有远方的消息传来，丢失的那一面却被迅速唤醒，你惊奇地发现自己突然掌握了对那些遗忘细节的感知能力，也会偶尔有一刹那忘记了究竟身在何方。&lt;/p&gt;
+
 </content>
  </entry>
  
