@@ -2,7 +2,7 @@
 layout: post
 title:  "spark基本命令"
 date:   2015-09-22 23:54:31
-
+categories: 代码之术
 ---
 ##基本命令 
 
@@ -11,7 +11,6 @@ date:   2015-09-22 23:54:31
     start-master.sh
     start-slaves.sh
 
-<!--more-->
 停止集群
     
     stop-master.sh

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+ {% include head.html %}
+{% include header.html %}
+
+  <body>
+    <div class="bg-wrapper wrappers " id="section1">
+      <div class="abs-content divider-panel">
+        <div class="divider">
+
+              </div>
+      </div>
+            <div class="abs-content hands-abs">
+
+                <h1 class="title">{{site.title}}</h1>
+
+                <p>{{site.description}}</p>
+            <p class="psm"></p>
+            </div>
+            <a class="downbtn" href="#section2"></a>
+            <div class="triangle-bottomleft"></div>
+            <div class="triangle-bottomright"></div>
+   </div>
+
+    <div class="page-content">
+      <div class="wrapper">
+        {{ content }}
+      </div>
+    </div>
+
+    {% include footer.html %}
+
+  </body>
+
+</html>

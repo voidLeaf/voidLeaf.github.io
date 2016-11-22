@@ -1,0 +1,44 @@
+---
+layout: default
+title: 2015年书单
+---
+
+<div class="page-content" style="padding-top:50px">
+<div class="row text-center " >
+<div class="sub-title">BOOKS</div>
+{% for book in site.data.books %}
+<div class="col-md-12 post">
+          <a class="post-title">
+            {{book.name}}
+          </a>
+          <div class="post-time">
+            {{book.author}} [ {{book.nation}} ]
+          </div>
+          <div class="post-content">
+            {{book.intro}}
+          </div>
+
+          <div class="post-footer">
+          	 {% for post in site.posts %}
+		  
+ 		{% endfor %}
+ 		 {% for post in site.posts %}
+
+		{% endfor %}
+            <div class="post-tag">
+
+              <div class="post-tag-title">
+                状态：
+              </div>
+              <div class="post-tag-item">
+                 {{book.read}}
+              </div>
+
+            </div>
+
+          </div>
+ </div>
+
+{% endfor %}
+</div>
+</div>

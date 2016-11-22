@@ -1,38 +1,84 @@
 ---
-layout: default
-title: Home
+layout: index
 ---
+<div class="page-content" style="padding-top:50px">
 
-<div class="posts">
-  {% for post in paginator.posts %}
-  <div class="post">
-    <h1 class="post-title">
-      <a href="{{ post.url | prepend: site.baseurl }}">
-        {{ post.title }}
-      </a>
-    </h1>
+    <div class="container">
+      <div class="row text-center">
+    
+      </div>
+    </div>
+    <div class="section container">
+      <div class="row text-center " id="section2">
+        <div class="sub-title">LATEST POSTS</div>
+        {% for i in (0..4) %}
+        <div class="col-md-12 post">
+          <a class="post-title" href="{{ site.posts[i].url | prepend: site.baseurl }}">
+            {{ site.posts[i].title }}
+          </a>
+          <div class="post-time">
+            {{ site.posts[i].date | date: "%b %-d, %Y" }}
+          </div>
+          <div class="post-content">
+            {{ site.posts[i].content | split: '<!--more-->' | first}} ...
+          </div>
+          <div class="post-footer">
+            
+            <a class="post-more"  href="{{ site.posts[i].url | prepend: site.baseurl }}">
+              继续阅读全文
+            </a>
+            <div class="post-tag">
+             
+              <div class="post-tag-title">
+                标签：
+              </div>
+               {% for tag in site.posts[i].tags %}
+              <div class="post-tag-item">
+                {{tag}}
+              </div>
+              {% endfor %}
+            </div>
+            
+          </div>
+        </div>
+    {% endfor %}
+      </div>
+  
+    </div>
+    <div class="row text-center">
+      <div class="pagination">
+  
+    <span>« Prev</span>
+  
 
-    <span class="post-date">{{ post.date | date_to_string }}</span>
+  
+    
+      <em>1</em>
+    
+  
+    
+      <a href="/blog/page2/index.html">2</a>
+    
+  
+    
+      <a href="/blog/page3/index.html">3</a>
+    
+  
+    
+      <a href="/blog/page4/index.html">4</a>
+    
+  
+    
+      <a href="/blog/page5/index.html">5</a>
+    
+  
 
-     {{ post.content | split: '<!--more-->' | first}} ...
+  
+    <a href="/blog/page2">Next »</a>
+  
+</div>
+    </div>
+   
   </div>
-  {% endfor %}
-</div>
 
-<div class="pagination">
-  {% if paginator.next_page %}
-    <a class="pagination-item older" href="{{ site.baseurl }}/page{{paginator.next_page}}">Older</a>
-  {% else %}
-    <span class="pagination-item older">Older</span>
-  {% endif %}
-  {% if paginator.previous_page %}
-    {% if paginator.page == 2 %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/">Newer</a>
-    {% else %}
-      <a class="pagination-item newer" href="{{ site.baseurl }}/page{{paginator.previous_page}}">Newer</a>
-    {% endif %}
-  {% else %}
-    <span class="pagination-item newer">Newer</span>
-  {% endif %}
 </div>
-
