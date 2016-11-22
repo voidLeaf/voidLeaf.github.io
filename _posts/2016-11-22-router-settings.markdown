@@ -23,11 +23,15 @@ tags:
 
 配置端口vlan属性为trunk
 <!--more-->
+
 ```
-[S1] inter e0/13
-[S1-Ethernet0/13]port link-type trunk
+[S1] inter e0/13   
+[S1-Ethernet0/13]port link-type trunk   
 [S1-Ethernet0/13]port trunk permit VLAN 2 3
 ```
+
+
+
 
 配置端口vlan属性为hybrid
 
