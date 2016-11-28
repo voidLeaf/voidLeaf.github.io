@@ -1,4 +1,20 @@
-# Python随机森林预测泰坦尼克海难生还
+---
+author: voidleaf
+comments: true
+date: 2016-11-28 18:13:10+00:00
+layout: post
+title: Python随机森林预测泰坦尼克海难生还
+categories:
+- 代码之术
+post_format:
+- 日志
+tags:
+- python
+- sklearn
+- 随机森林
+- 数据分析
+- 机器学习
+---
 
 ## 简介
 
