@@ -89,6 +89,109 @@
         <div class="sub-title">LATEST POSTS</div>
         
         <div class="col-md-12 post">
+          <a class="post-title" href="/2016/11/29/pyhton-practice-titanic">
+            Python随机森林预测泰坦尼克海难生还
+          </a>
+          <div class="post-time">
+            Nov 29, 2016
+          </div>
+          <div class="post-content">
+            <h2 id="section">简介</h2>
+
+<p>Titanic是Kaggle竞赛的一道入门题，参赛者需要根据旅客的阶级、性别、年龄、船舱种类等信息预测其是否能在海难中生还，详细信息可以参看<a href="https://www.kaggle.com/">https://www.kaggle.com/</a>，本文的分析代码也取自 kaggle 中该竞赛的 kernal。</p>
+
+ ...
+          </div>
+          <div class="post-footer">
+            
+            <a class="post-more"  href="/2016/11/29/pyhton-practice-titanic">
+              继续阅读全文
+            </a>
+            <div class="post-tag">
+             
+              <div class="post-tag-title">
+                标签：
+              </div>
+               
+              <div class="post-tag-item">
+                python
+              </div>
+              
+              <div class="post-tag-item">
+                sklearn
+              </div>
+              
+              <div class="post-tag-item">
+                随机森林
+              </div>
+              
+              <div class="post-tag-item">
+                数据分析
+              </div>
+              
+              <div class="post-tag-item">
+                机器学习
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+    
+        <div class="col-md-12 post">
+          <a class="post-title" href="/2016/11/29/feature-extract">
+            特征选择方法简介
+          </a>
+          <div class="post-time">
+            Nov 29, 2016
+          </div>
+          <div class="post-content">
+            <h2 id="section">特征选择的步骤</h2>
+
+<ol>
+  <li>子集搜索</li>
+  <li>子集评价</li>
+</ol>
+
+ ...
+          </div>
+          <div class="post-footer">
+            
+            <a class="post-more"  href="/2016/11/29/feature-extract">
+              继续阅读全文
+            </a>
+            <div class="post-tag">
+             
+              <div class="post-tag-title">
+                标签：
+              </div>
+               
+              <div class="post-tag-item">
+                python
+              </div>
+              
+              <div class="post-tag-item">
+                sklearn
+              </div>
+              
+              <div class="post-tag-item">
+                随机森林
+              </div>
+              
+              <div class="post-tag-item">
+                数据分析
+              </div>
+              
+              <div class="post-tag-item">
+                机器学习
+              </div>
+              
+            </div>
+            
+          </div>
+        </div>
+    
+        <div class="col-md-12 post">
           <a class="post-title" href="/2016/11/22/definity">
             《必然》——未来世界的12种趋势
           </a>
@@ -191,254 +294,6 @@
           <div class="post-footer">
             
             <a class="post-more"  href="/2016/11/16/redux">
-              继续阅读全文
-            </a>
-            <div class="post-tag">
-             
-              <div class="post-tag-title">
-                标签：
-              </div>
-               
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="col-md-12 post">
-          <a class="post-title" href="/2015/09/23/sparktest">
-            spark基本命令
-          </a>
-          <div class="post-time">
-            Sep 23, 2015
-          </div>
-          <div class="post-content">
-            <p>##基本命令</p>
-
-<p>启动集群</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>start-master.sh
-start-slaves.sh
-</code></pre>
-</div>
-
-<p>停止集群</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>stop-master.sh
-stop-slaves.sh
-</code></pre>
-</div>
-
-<p>进入pyspark</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>pyspark
-</code></pre>
-</div>
-
-<p>进入spark-shell</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>spark-shell 
-</code></pre>
-</div>
-
-<p>退出sparkshell ：ctrl+z</p>
-
-<p>##spark-shell入门使用</p>
-
-<p>下载测试文件到本地</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>wget http://www-stat.stanford.edu/~tibs/ElemStatLearn/datasets/spam.data  
-</code></pre>
-</div>
-
-<p>加载文件到spark</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; val inFile = sc.textFile("./spam.data")
-</code></pre>
-</div>
-
-<p>保证所有的客户机都能访问到该文件</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; import org.apache.spark.SparkFiles;
-scala&gt; val file = sc.addFile("spam.data")
-scala&gt; val inFile = sc.textFile(SparkFiles.get("spam.data"))
-</code></pre>
-</div>
-
-<p>使用map功能将文本转化成数字数组</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; val nums = inFile.map(x =&gt; x.split(' ').map(_.toDouble)) 
-</code></pre>
-</div>
-
-<p>打印部分结果</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; inFile.first()
-[...]
-res2: String = 0 0.64 0.64 0 0.32 0 0 0 0 0 0 0.64 0 0 0 0.32 0 1.29
-1.93 0 0.96 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
-0 0.778 0 0 3.756 61 278 1 
-
-scala&gt; nums.first()
-[...]
-res3: Array[Double] = Array(0.0, 0.64, 0.64, 0.0, 0.32, 0.0, 0.0, 0.0,
-0.0, 0.0, 0.0, 0.64, 0.0, 0.0, 0.0, 0.32, 0.0, 1.29, 1.93, 0.0, 0.96,
-0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0, 0.0,
-0.0, 0.0, 0.778, 0.0, 0.0, 3.756, 61.0, 278.0, 1.0)
-</code></pre>
-</div>
-
-<p>##使用spark进行logist回归</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>scala&gt; import org.apache.spark.util.Vector
-import spark.util.Vector
-scala&gt; case class DataPoint(x: Vector, y: Double)
-defined class DataPoint
-scala&gt; def parsePoint(x: Array[Double]): DataPoint = {
-DataPoint(new Vector(x.slice(0,x.size-2)) , x(x.size-1))
-}
-parsePoint: (x: Array[Double])this.DataPoint
-scala&gt; val points = nums.map(parsePoint(_))
-points: spark.RDD[this.DataPoint] = MappedRDD[3] at map at
-&lt;console&gt;:24
-scala&gt; import java.util.Random
-import java.util.Random
-scala&gt; val rand = new Random(53)
-rand: java.util.Random = java.util.Random@3f4c24
-scala&gt; var w = Vector(nums.first.size-2, _ =&gt; rand.nextDouble)
-13/03/31 00:57:30 INFO spark.SparkContext: Starting job: first at
-&lt;console&gt;:20
-...
-13/03/31 00:57:30 INFO spark.SparkContext: Job finished: first at
-&lt;console&gt;:20, took 0.01272858 s
-w: spark.util.Vector = (0.7290865701603526, 0.8009687428076777,
-0.6136632797111822, 0.9783178194773176, 0.3719683631485643,
-0.46409291255379836, 0.5340172959927323, 0.04034252433669905,
-0.3074428389716637, 0.8537414030626244, 0.8415816118493813,
-0.719935849109521, 0.2431646830671812, 0.17139348575456848,
-0.5005137792223062, 0.8915164469396641, 0.7679331873447098,
-0.7887571495335223, 0.7263187438977023, 0.40877063468941244,
-0.7794519914671199, 0.1651264689613885, 0.1807006937030201,
-</code></pre>
-</div>
-
- ...
-          </div>
-          <div class="post-footer">
-            
-            <a class="post-more"  href="/2015/09/23/sparktest">
-              继续阅读全文
-            </a>
-            <div class="post-tag">
-             
-              <div class="post-tag-title">
-                标签：
-              </div>
-               
-            </div>
-            
-          </div>
-        </div>
-    
-        <div class="col-md-12 post">
-          <a class="post-title" href="/2015/09/23/nodejsnote">
-            node.js 笔记（全局变量）
-          </a>
-          <div class="post-time">
-            Sep 23, 2015
-          </div>
-          <div class="post-content">
-            <h2 id="section">全局对象</h2>
-<div class="highlighter-rouge"><pre class="highlight"><code>global，如console,process
-</code></pre>
-</div>
-
-<h2 id="section-1">全局变量</h2>
-<p>ECMAScript 定义</p>
-
-<ul>
-  <li>最外层定义的变量</li>
-  <li>全局对象的属性</li>
-  <li>隐式定义的变量</li>
-</ul>
-
-<p>node.js不可能定义外层变量，一般都是全局对象的属性</p>
-
-<h2 id="process">process</h2>
-<p>global对象的属性，用于描述Node.js进程状态的对象<br />
-成员方法：</p>
-<ul>
-  <li>process.argv
-  命令行参数数组，第一个元素是node，第二个元素是脚本文件名，第三个元素开始是运行参数</li>
-  <li>process.stdout
-  标准输出流</li>
-  <li>process.stdin 
-  标准输入流
-  为事件循环设置一项任务，- process.nextTick(callback)
-node.js会在下次事件循环调响应时调用callback</li>
-</ul>
-
-<h2 id="console">console</h2>
-<p>提供控制台标准输出</p>
-<ul>
-  <li>console.log</li>
-  <li>console.error</li>
-  <li>console.trace</li>
-</ul>
-
-<h2 id="util">util</h2>
-<h3 id="utilinherite">util.inherite</h3>
-<p>实现对象间原型继承</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>util.inherits(Sub,Base); ### util.inspect  将任意对象转换成字符串 
-</code></pre>
-</div>
-
-<h2 id="events">events</h2>
-<p>事件发射器</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>EventEmitter.on(event,lisener)
-//注册时间监听器
-EventEmitter.emit(event,[],[])
-//发射event事件，传入若干参数
-EventEmitter.once(event,listener)
-//为指定事件注册一个单次监听器
-</code></pre>
-</div>
-
-<p>error事件 ：遇到异常时发射error事件，没有响应的事件即为异常</p>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>var events = require('events');
-var emitter = new events.EventEmitter();
-emitter.emit('error');
-</code></pre>
-</div>
-
-<h2 id="fs">文件系统fs</h2>
-
-<div class="highlighter-rouge"><pre class="highlight"><code>fs.readFile(filename,[encoding],[callback])
-var fs=require('fs');
-fs.readFile('content.txt',function(err,data){
-	if(err){
-		console.log("error");
-	}else{
-		console.log("data");
-	}
-});
-</code></pre>
-</div>
-
-<p>console.log(“error”);
-    	}else{
-    		console.log(“data”);
-    	}
-    });</p>
-
- ...
-          </div>
-          <div class="post-footer">
-            
-            <a class="post-more"  href="/2015/09/23/nodejsnote">
               继续阅读全文
             </a>
             <div class="post-tag">

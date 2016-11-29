@@ -20,6 +20,8 @@ tags:
 
 Titanic是Kaggle竞赛的一道入门题，参赛者需要根据旅客的阶级、性别、年龄、船舱种类等信息预测其是否能在海难中生还，详细信息可以参看[https://www.kaggle.com/](https://www.kaggle.com/)，本文的分析代码也取自 kaggle 中该竞赛的 kernal。
 
+<!--more-->  
+
 ## 数据介绍
 
 给出的数据格式如下：
@@ -95,7 +97,7 @@ if len(train_df.Age[ train_df.Age.isnull() ]) > 0:
     train_df.loc[ (train_df.Age.isnull()), 'Age'] = median_age
 
 # Remove the Name column, Cabin, Ticket, and Sex (since I copied and filled it to Gender)
-train_df = train_df.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'PassengerId'], axis=1) 
+train_df = train_df.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'PassengerId'], axis=1)
 
 
 # TEST DATA
@@ -130,7 +132,7 @@ if len(test_df.Fare[ test_df.Fare.isnull() ]) > 0:
 # Collect the test data's PassengerIds before dropping it
 ids = test_df['PassengerId'].values
 # Remove the Name column, Cabin, Ticket, and Sex (since I copied and filled it to Gender)
-test_df = test_df.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'PassengerId'], axis=1) 
+test_df = test_df.drop(['Name', 'Sex', 'Ticket', 'Cabin', 'PassengerId'], axis=1)
 
 
 # The data is now ready to go. So lets fit to the train, then predict to the test!
